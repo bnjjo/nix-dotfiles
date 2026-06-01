@@ -1,0 +1,45 @@
+# theme
+theme = Vague
+
+# transparency & blur
+background-opacity = 0.85
+background-blur = 40
+
+# font
+font-size = 18.0
+font-family = "Maple Mono Normal NL NF"
+font-feature = zero
+font-thicken = true
+
+term = ghostty
+
+# run tmux on launch, attach to existing session if exists
+# command = /bin/zsh -c "tmux attach || tmux new"
+
+window-padding-x = 8
+window-padding-balance = false
+window-padding-color = extend
+
+mouse-hide-while-typing = true
+macos-titlebar-style = hidden
+macos-option-as-alt = right
+confirm-close-surface = false
+quit-after-last-window-closed = true
+window-inherit-working-directory = true
+
+keybind = cmd+t=unbind
+
+keybind = cmd+digit1=text:\x1b1
+keybind = cmd+digit2=text:\x1b2
+keybind = cmd+digit3=text:\x1b3
+keybind = cmd+digit4=text:\x1b4
+keybind = cmd+digit5=text:\x1b5
+keybind = cmd+digit6=text:\x1b6
+keybind = cmd+digit7=text:\x1b7
+keybind = cmd+digit8=text:\x1b8
+keybind = cmd+digit9=text:\x1b9
+keybind = cmd+digit0=text:\x1b0
+
+# nightly releases
+auto-update-channel = tip
+keybind = shift+enter=text:\x1b\r
