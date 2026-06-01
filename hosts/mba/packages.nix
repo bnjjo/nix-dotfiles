@@ -15,11 +15,6 @@
   ];
 
   programs.bash.enable = true;
-  programs.git = {
-    enable = true;
-    settings.user.name = "bnjjo";
-    settings.user.email = "131111426+bnjjo@users.noreply.github.com";
-  };
   programs.starship.enable = true;
   programs.zsh = {
     enable = true;
