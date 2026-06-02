@@ -1,9 +1,5 @@
 # configuration.nix
-{
-  pkgs,
-  fenix,
-  ...
-}: {
+{pkgs, ...}: {
   networking.hostName = "nix-darwin";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -13,22 +9,11 @@
     name = "benjamin";
   };
 
+  imports = [../../common/rust.nix];
+
   fonts.packages = [
     pkgs.maple-mono.NormalNL-NF
     pkgs.nerd-fonts.jetbrains-mono
-  ];
-
-  nixpkgs.overlays = [fenix.overlays.default];
-  environment.systemPackages = [
-    (pkgs.fenix.stable.withComponents [
-      "cargo"
-      "clippy"
-      "rust-src"
-      "rustc"
-    ])
-    (pkgs.fenix.default.withComponents [
-      "rustfmt"
-    ])
   ];
 
   homebrew = {

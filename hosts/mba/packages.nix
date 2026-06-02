@@ -1,6 +1,12 @@
 {pkgs, ...}: {
   imports = [
-    ../../common.nix
+    ../../common/bat.nix
+    ../../common/eza.nix
+    ../../common/fd.nix
+    ../../common/git.nix
+    ../../common/ripgrep.nix
+    ../../common/television.nix
+    ../../common/tmux.nix
   ];
 
   home.packages = with pkgs; [
