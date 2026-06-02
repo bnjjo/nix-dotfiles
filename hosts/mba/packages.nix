@@ -28,7 +28,7 @@
       ll = "eza -lha";
       ls = "eza";
       reb = "sudo darwin-rebuild switch --flake ~/nix-dotfiles#nix-darwin";
-      rift = "~/Code/src/rift/target/release/rift";
+      rift = "~/Code/source/rift/target/release/rift";
       update = "nix flake update --flake ~/nix-dotfiles && reb";
       fastfetch = "fastfetch --logo 'NixOS'";
     };
