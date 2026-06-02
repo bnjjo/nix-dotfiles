@@ -25,7 +25,6 @@
       "clippy"
       "rust-src"
       "rustc"
-      "rust-analyzer"
     ])
     (pkgs.fenix.default.withComponents [
       "rustfmt"
@@ -49,6 +48,7 @@
       "boring-notch"
       "ghostty"
       "karabiner-elements"
+      "linearmouse"
       "nvidia-geforce-now"
       "raycast"
       "zen"
