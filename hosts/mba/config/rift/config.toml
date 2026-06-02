@@ -62,13 +62,13 @@ default_orientation = "perpendicular"
 # Gap configuration for tiles and displays.
 [settings.layout.gaps.outer]
 top    = 8
-left   = 14
-bottom = 14
-right  = 14
+left   = 10
+bottom = 10
+right  = 10
 
 [settings.layout.gaps.inner]
-horizontal = 15
-vertical   = 15
+horizontal = 12
+vertical   = 12
 
 # Per-display overrides use a display UUID key ( https://github.com/acsandmann/rift/wiki/Config#settingslayoutgaps ):
 # [settings.layout.gaps.per_display."<uuid>".outer]
