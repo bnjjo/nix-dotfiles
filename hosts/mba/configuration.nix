@@ -1,4 +1,3 @@
-# configuration.nix
 {pkgs, ...}: {
   networking.hostName = "nix-darwin";
 
@@ -8,8 +7,6 @@
     home = "/Users/benjamin";
     name = "benjamin";
   };
-
-  imports = [../../common/rust.nix];
 
   fonts.packages = [
     pkgs.maple-mono.NormalNL-NF

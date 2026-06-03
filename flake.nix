@@ -1,4 +1,3 @@
-# flake.nix
 {
   description = "My nix-darwin flake";
 

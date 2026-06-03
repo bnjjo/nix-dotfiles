@@ -4,6 +4,7 @@
     ../../common/eza.nix
     ../../common/fd.nix
     ../../common/git.nix
+    ../../common/langs.nix
     ../../common/ripgrep.nix
     ../../common/television.nix
     ../../common/tmux.nix

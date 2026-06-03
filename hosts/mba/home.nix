@@ -1,4 +1,3 @@
-# darwin.nix
 {...}: {
   imports = [./packages.nix];
 
