@@ -13,14 +13,14 @@
     stylua
 
     # rust
-    (fenix.packages.${pkgs.system}.stable.withComponents [
+    (fenix.packages.${pkgs.stdenv.hostPlatform.system}.stable.withComponents [
       "cargo"
       "clippy"
       "rust-src"
       "rustc"
       "rust-analyzer"
     ])
-    (fenix.packages.${pkgs.system}.default.withComponents [
+    (fenix.packages.${pkgs.stdenv.hostPlatform.system}.default.withComponents [
       "rustfmt"
     ])
   ];
