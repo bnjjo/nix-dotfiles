@@ -2,6 +2,7 @@
   programs.fd = {
     enable = true;
     ignores = [
+      "Applications/"
       "Library/"
       ".Trash/"
       ".cache/"

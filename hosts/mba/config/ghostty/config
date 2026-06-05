@@ -1,3 +1,6 @@
+# let home manager manage updates
+auto-update = off
+
 # theme
 theme = Vague
 
@@ -25,7 +28,7 @@ macos-titlebar-style = hidden
 macos-option-as-alt = right
 confirm-close-surface = false
 quit-after-last-window-closed = true
-window-inherit-working-directory = true
+window-inherit-working-directory = false
 
 keybind = cmd+t=unbind
 
@@ -39,7 +42,3 @@ keybind = cmd+digit7=text:\x1b7
 keybind = cmd+digit8=text:\x1b8
 keybind = cmd+digit9=text:\x1b9
 keybind = cmd+digit0=text:\x1b0
-
-# nightly releases
-auto-update-channel = tip
-keybind = shift+enter=text:\x1b\r

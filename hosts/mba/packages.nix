@@ -21,8 +21,15 @@
     tree-sitter
   ];
 
-  programs.bash.enable = true;
-  programs.starship.enable = true;
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      set -o vi
+    '';
+  };
+  programs.starship = {
+    enable = true;
+  };
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
