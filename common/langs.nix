@@ -12,17 +12,16 @@
     lua-language-server
     stylua
 
-    # rust stable
-    (fenix.packages.${pkgs.stdenv.hostPlatform.system}.stable.withComponents [
-      "cargo"
-      "clippy"
-      "rust-src"
-      "rustc"
-      "rust-analyzer"
-    ])
-    # rust nightly
-    (fenix.packages.${pkgs.stdenv.hostPlatform.system}.default.withComponents [
-      "rustfmt"
+    # rust
+    (fenix.packages.${pkgs.stdenv.hostPlatform.system}.combine [
+      (fenix.packages.${pkgs.stdenv.hostPlatform.system}.stable.withComponents [
+        "cargo"
+        "clippy"
+        "rust-src"
+        "rustc"
+        "rust-analyzer"
+      ])
+      fenix.packages.${pkgs.stdenv.hostPlatform.system}.default.rustfmt
     ])
   ];
 }
