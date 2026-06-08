@@ -25,8 +25,8 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1780882170,
-        "narHash": "sha256-I9NcuVYX13EG4LKlmGr3ZlRntoAoMUjWV4v5mMR87Xc=",
+        "lastModified": 1780882756,
+        "narHash": "sha256-L535F79W8YEdFY3tJj0ZtXzFpsX+SZbAzSije6XIrIc=",
         "path": "/home/benjamin/nix-dotfiles/hosts/desktop/suckless/dwl",
         "type": "path"
       },
@@ -212,8 +212,8 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1780882461,
-        "narHash": "sha256-bvGZt5Hlp6Vs2HOLmeqeSNePusinGjdnuyn738PG2LQ=",
+        "lastModified": 1780882756,
+        "narHash": "sha256-DROhoNC7KxdVlihAOrmntnHAJpipLDgB/DVl4Bh70mw=",
         "path": "/home/benjamin/nix-dotfiles/hosts/desktop/suckless/slstatus",
         "type": "path"
       },
