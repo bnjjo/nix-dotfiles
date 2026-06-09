@@ -2,7 +2,6 @@
   imports = [
     ./theming.nix
     ./packages.nix
-    ./services.nix
   ];
 
   home.username = "benjamin";

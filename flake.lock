@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780290312,
-        "narHash": "sha256-eTAlX0CwgB84Ts3GaBd944A3DRXVMzgA0EqroZBISUo=",
+        "lastModified": 1780894562,
+        "narHash": "sha256-c3430xwxwhHipl3jigUGMMBfpaMylDqytW/kdmB3ZGs=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "115e5211780054d8a890b41f0b7734cafad54dfe",
+        "rev": "24fed06cac83bcc44ac8efbb57cab1a82fa0bedc",
         "type": "github"
       },
       "original": {
@@ -25,14 +25,18 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1780882756,
-        "narHash": "sha256-L535F79W8YEdFY3tJj0ZtXzFpsX+SZbAzSije6XIrIc=",
-        "path": "/home/benjamin/nix-dotfiles/hosts/desktop/suckless/dwl",
-        "type": "path"
+        "lastModified": 1780933936,
+        "narHash": "sha256-wP1oq/wHpYgNim2QdGPrO7+56m7RJ+4ASWyuBooBA5k=",
+        "owner": "bnjjo",
+        "repo": "dwl",
+        "rev": "2eb56a612dd511f5fc9a4fe8b32975271506522c",
+        "type": "github"
       },
       "original": {
-        "path": "/home/benjamin/nix-dotfiles/hosts/desktop/suckless/dwl",
-        "type": "path"
+        "owner": "bnjjo",
+        "ref": "main",
+        "repo": "dwl",
+        "type": "github"
       }
     },
     "fenix": {
@@ -63,11 +67,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780679734,
-        "narHash": "sha256-KmRNvpNOb7QEORa06bVgjW9kITcx0VhsI7w0vhmZyD8=",
+        "lastModified": 1780943742,
+        "narHash": "sha256-01bTMR9ZPG+uxPaZBeOwagg5uxIaFYs2/3YIrOX+bCA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b2b7db486e06e098711dc291bb25db82850e1d16",
+        "rev": "df39142474950e42d5fc3bf2fef9d6c62abbe8d7",
         "type": "github"
       },
       "original": {
@@ -187,7 +191,8 @@
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_2",
         "preservation": "preservation",
-        "slstatus": "slstatus"
+        "slstatus": "slstatus",
+        "zen-browser": "zen-browser"
       }
     },
     "rust-analyzer-src": {
@@ -212,14 +217,38 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1780882756,
-        "narHash": "sha256-DROhoNC7KxdVlihAOrmntnHAJpipLDgB/DVl4Bh70mw=",
-        "path": "/home/benjamin/nix-dotfiles/hosts/desktop/suckless/slstatus",
-        "type": "path"
+        "lastModified": 1780991094,
+        "narHash": "sha256-PozBgoPgmRFzQWglw4Y6i0do2rXYAd3nP514YJf5Ajg=",
+        "owner": "bnjjo",
+        "repo": "slstatus",
+        "rev": "6a85487fdec01bff5e87e07cd0c5d134271bafa2",
+        "type": "github"
       },
       "original": {
-        "path": "/home/benjamin/nix-dotfiles/hosts/desktop/suckless/slstatus",
-        "type": "path"
+        "owner": "bnjjo",
+        "ref": "master",
+        "repo": "slstatus",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780637620,
+        "narHash": "sha256-ngPdHinPyF0AMxRr32qt+TZCv0sagmooBW14u6DfjSU=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "8c62bc6a72ac5a5b8d1b41b2b88dfed9d9932c48",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "type": "github"
       }
     }
   },

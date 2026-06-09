@@ -42,8 +42,6 @@
     ];
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   fonts.packages = [
     pkgs.noto-fonts
     pkgs.noto-fonts-color-emoji
@@ -74,6 +72,7 @@
   # neeeded for flatpak
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-wlr
     ];

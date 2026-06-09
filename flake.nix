@@ -21,10 +21,14 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # my stuff
-    dwl.url = "path:/home/benjamin/nix-dotfiles/hosts/desktop/suckless/dwl";
-    slstatus.url = "path:/home/benjamin/nix-dotfiles/hosts/desktop/suckless/slstatus";
+    dwl.url = "github:bnjjo/dwl/main";
+    slstatus.url = "github:bnjjo/slstatus/master";
   };
 
   outputs = inputs @ {

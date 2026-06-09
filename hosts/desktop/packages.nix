@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../common/bat.nix
     ../../common/eza.nix
@@ -14,19 +18,20 @@
     brightnessctl
     cliphist
     fastfetch
-    firefox
     gcc
     gnumake
     neovim
     nix-search-tv
     playerctl
     rofimoji
+    swayidle
     tree-sitter
     wbg # background setting tool
     wlopm # dpms manager
     wlsunset
     wl-clipboard
     wmenu
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.bash = {
@@ -52,28 +57,26 @@
         hide-when-typing = "yes";
       };
       colors-dark = {
-        alpha = "0.93";
-        # tokyonight night
-        background = "1a1b26";
-        foreground = "c0caf5";
-
-        regular0 = "15161E";
-        regular1 = "f7768e";
-        regular2 = "9ece6a";
-        regular3 = "e0af68";
-        regular4 = "7aa2f7";
-        regular5 = "bb9af7";
-        regular6 = "7dcfff";
-        regular7 = "a9b1d6";
-
-        bright0 = "414868";
-        bright1 = "f7768e";
-        bright2 = "9ece6a";
-        bright3 = "e0af68";
-        bright4 = "7aa2f7";
-        bright5 = "bb9af7";
-        bright6 = "7dcfff";
-        bright7 = "c0caf5";
+        alpha = "0.99";
+        # gruvbox dark
+        background = "282828";
+        foreground = "ebdbb2";
+        regular0 = "282828";
+        regular1 = "cc241d";
+        regular2 = "98971a";
+        regular3 = "d79921";
+        regular4 = "458588";
+        regular5 = "b16286";
+        regular6 = "689d6a";
+        regular7 = "a89984";
+        bright0 = "928374";
+        bright1 = "fb4934";
+        bright2 = "b8bb26";
+        bright3 = "fabd2f";
+        bright4 = "83a598";
+        bright5 = "d3869b";
+        bright6 = "8ec07c";
+        bright7 = "ebdbb2";
       };
       text-bindings = {
         "\\x1b1" = "Mod4+1";
@@ -93,6 +96,13 @@
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
+    settings = {
+      character = {
+        success_symbol = "[󰄾󰇼](bold green)";
+        error_symbol = "[󰄾󰇼](bold red)";
+        vimcmd_symbol = "[󰇼󰄽](bold green)";
+      };
+    };
   };
   programs.zsh = {
     enable = true;
@@ -109,5 +119,13 @@
       update = "nix flake update --flake ~/nix-dotfiles && reb";
       start-dwl = "~/nix-dotfiles/hosts/desktop/suckless/slstatus/result/bin/slstatus -s | ~/nix-dotfiles/hosts/desktop/suckless/dwl/result/bin/dwl";
     };
+  };
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.valvesoftware.Steam"
+      "com.viber.Viber"
+    ];
   };
 }
