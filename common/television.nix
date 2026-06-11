@@ -18,7 +18,7 @@
           description = "Browse nix dotfiles";
           requirements = ["fd" "bat"];
         };
-        source.command = "fd -t f . ~/nix-dotfiles";
+        source.command = "fd -t f --base-directory ~/nix-dotfiles";
         preview.command = "bat -n --color=always '{}'";
         keybindings.enter = "actions:edit";
         actions.edit = {
@@ -33,7 +33,7 @@
           description = "Browse neovim dotfiles";
           requirements = ["fd" "bat"];
         };
-        source.command = "fd -t f . ~/.config/nvim";
+        source.command = "fd -t f --no-ignore-vcs . ~/.config/nvim";
         preview.command = "bat -n --color=always '{}'";
         keybindings.enter = "actions:edit";
         actions.edit = {
