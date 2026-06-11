@@ -19,11 +19,11 @@
           requirements = ["fd" "bat"];
         };
         source.command = "fd -t f --base-directory ~/nix-dotfiles";
-        preview.command = "bat -n --color=always '{}'";
+        preview.command = "bat -n --color=always ~/nix-dotfiles/'{}'";
         keybindings.enter = "actions:edit";
         actions.edit = {
           description = "Edit the selected dotfile";
-          command = "nvim '{}' -c 'cd ~/nix-dotfiles'";
+          command = "nvim ~/nix-dotfiles/'{}' -c 'cd ~/nix-dotfiles'";
           mode = "execute";
         };
       };
