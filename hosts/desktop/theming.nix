@@ -18,5 +18,9 @@
       name = "JetBrainsMono Nerd Font";
       size = 13;
     };
+    theme = {
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
+    };
   };
 }

@@ -20,10 +20,12 @@
     fastfetch
     gcc
     gnumake
+    grim
     neovim
     nix-search-tv
     playerctl
     rofimoji
+    slurp
     swayidle
     tree-sitter
     wbg # background setting tool
@@ -51,6 +53,7 @@
 
     settings = {
       main = {
+        pad = "10x0";
         font = "JetBrains Mono Nerd Font:size=14.5";
       };
       mouse = {
@@ -58,6 +61,7 @@
       };
       colors-dark = {
         alpha = "0.99";
+
         # gruvbox dark
         background = "282828";
         foreground = "ebdbb2";
