@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./starship.nix
     ../../common/bat.nix
     ../../common/eza.nix
     ../../common/fd.nix
@@ -26,9 +27,6 @@
     initExtra = ''
       set -o vi
     '';
-  };
-  programs.starship = {
-    enable = true;
   };
   programs.zsh = {
     enable = true;

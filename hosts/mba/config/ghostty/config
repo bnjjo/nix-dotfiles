@@ -2,7 +2,7 @@
 auto-update = off
 
 # theme
-theme = Vague
+theme = Catppuccin Mocha
 
 # transparency & blur
 background-opacity = 0.85
