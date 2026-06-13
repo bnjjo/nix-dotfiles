@@ -37,8 +37,23 @@
         preview.command = "bat -n --color=always '{}'";
         keybindings.enter = "actions:edit";
         actions.edit = {
-          description = "Edit the selected dotfile";
+          description = "Edit the selected neovim config file";
           command = "nvim '{}' -c 'cd ~/.config/nvim'";
+          mode = "execute";
+        };
+      };
+      org = {
+        metadata = {
+          name = "org";
+          description = "Browse org-mode files";
+          requirements = ["fd" "bat"];
+        };
+        source.command = "fd -t f . ~/orgfiles";
+        preview.command = "bat -n --color=always '{}'";
+        keybindings.enter = "actions:edit";
+        actions.edit = {
+          description = "Edit the selected org file";
+          command = "nvim '{}' -c 'cd ~/orgfiles'";
           mode = "execute";
         };
       };

@@ -13,6 +13,7 @@
 
   home.packages = with pkgs; [
     btop
+    chafa
     cloc
     fastfetch
     lazygit

@@ -16,11 +16,13 @@
 
   home.packages = with pkgs; [
     brightnessctl
+    chafa
     cliphist
     fastfetch
     gcc
     gnumake
     grim
+    mako
     neovim
     nix-search-tv
     playerctl
@@ -32,7 +34,9 @@
     wlopm # dpms manager
     wlsunset
     wl-clipboard
+    wob
     wmenu
+    xdg-utils # for neovim gx i.e. xdg-open and so on
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
@@ -59,8 +63,11 @@
       mouse = {
         hide-when-typing = "yes";
       };
+      cursor = {
+        blink = "yes";
+      };
       colors-dark = {
-        alpha = "0.99";
+        alpha = "0.96";
 
         # gruvbox dark
         background = "282828";

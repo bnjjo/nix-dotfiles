@@ -12,4 +12,7 @@
   home.sessionPath = [
     "$HOME/.local/share/flatpak/exports/bin"
   ];
+
+  home.file.".config/mako/config".source = ./config/mako/config;
+  home.file.".config/wob/wob.ini".source = ./config/wob/wob.ini;
 }
