@@ -35,6 +35,9 @@
       "raycast"
       "zen"
     ];
+    masApps = {
+      "Infuse" = 1136220934;
+    };
   };
 
   system.primaryUser = "benjamin";
