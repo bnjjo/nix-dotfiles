@@ -35,7 +35,6 @@
           "Code"
           "Downloads"
           "Pictures"
-          "VMs"
           "orgfiles"
           "nix-dotfiles"
         ];
