@@ -11,11 +11,16 @@
   fonts.packages = [
     pkgs.maple-mono.NormalNL-NF
     pkgs.nerd-fonts.jetbrains-mono
+    pkgs.sketchybar-app-font
   ];
+
+  imports = [./aerospace.nix];
 
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap";
+    # https://github.com/nix-darwin/nix-darwin/issues/1787
+    onActivation.cleanup = "zap"; # reenable once fixed
+    # onActivation.cleanup = "none";
     taps = [
       "FelixKratz/formulae"
       "TheBoredTeam/boring-notch"
@@ -30,14 +35,21 @@
       "boring-notch"
       "ghostty"
       "karabiner-elements"
+      "iloader"
       "linearmouse"
       "nvidia-geforce-now"
       "raycast"
+      "viber"
       "zen"
     ];
     masApps = {
       "Infuse" = 1136220934;
     };
+  };
+
+  services.sketchybar = {
+    enable = true;
+    package = pkgs.sketchybar;
   };
 
   system.primaryUser = "benjamin";
@@ -64,6 +76,7 @@
       NSAutomaticPeriodSubstitutionEnabled = false;
       NSAutomaticQuoteSubstitutionEnabled = false;
       NSAutomaticDashSubstitutionEnabled = false;
+      _HIHideMenuBar = true;
     };
   };
 

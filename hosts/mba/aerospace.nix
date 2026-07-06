@@ -1,0 +1,97 @@
+{...}: {
+  services.aerospace = {
+    enable = true;
+    settings = {
+      config-version = 2;
+
+      after-startup-command = [];
+      exec-on-workspace-change = [
+        "/bin/bash"
+        "-c"
+        "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE"
+      ];
+      start-at-login = false;
+
+      enable-normalization-flatten-containers = true;
+      enable-normalization-opposite-orientation-for-nested-containers = true;
+
+      accordion-padding = 30;
+      default-root-container-layout = "tiles";
+      default-root-container-orientation = "auto";
+
+      on-focused-monitor-changed = ["move-mouse monitor-lazy-center"];
+      on-focus-changed = ["move-mouse window-lazy-center"];
+
+      automatically-unhide-macos-hidden-apps = true;
+
+      persistent-workspaces = ["1" "2" "3" "4" "5"];
+
+      key-mapping.preset = "dvorak";
+
+      gaps = {
+        inner.horizontal = 10;
+        inner.vertical = 10;
+        outer.left = 10;
+        outer.bottom = 10;
+        outer.top = 10;
+        outer.right = 10;
+      };
+
+      mode.main.binding = {
+        alt-slash = "layout tiles horizontal vertical";
+        alt-comma = "layout accordion horizontal vertical";
+
+        alt-h = "focus left";
+        alt-j = "focus down";
+        alt-k = "focus up";
+        alt-l = "focus right";
+        alt-n = "layout horizontal vertical";
+
+        alt-shift-h = "move left";
+        alt-shift-j = "move down";
+        alt-shift-k = "move up";
+        alt-shift-l = "move right";
+
+        alt-minus = "resize smart -50";
+        alt-equal = "resize smart +50";
+
+        alt-1 = "workspace 1";
+        alt-2 = "workspace 2";
+        alt-3 = "workspace 3";
+        alt-4 = "workspace 4";
+        alt-5 = "workspace 5";
+        alt-6 = "workspace 6";
+        alt-7 = "workspace 7";
+        alt-8 = "workspace 8";
+        alt-9 = "workspace 9";
+
+        alt-shift-1 = "move-node-to-workspace 1 --focus-follows-window";
+        alt-shift-2 = "move-node-to-workspace 2 --focus-follows-window";
+        alt-shift-3 = "move-node-to-workspace 3 --focus-follows-window";
+        alt-shift-4 = "move-node-to-workspace 4 --focus-follows-window";
+        alt-shift-5 = "move-node-to-workspace 5 --focus-follows-window";
+        alt-shift-6 = "move-node-to-workspace 6 --focus-follows-window";
+        alt-shift-7 = "move-node-to-workspace 7 --focus-follows-window";
+        alt-shift-8 = "move-node-to-workspace 8 --focus-follows-window";
+        alt-shift-9 = "move-node-to-workspace 9 --focus-follows-window";
+
+        alt-tab = "focus dfs-next --boundaries-action wrap-around-the-workspace";
+        alt-shift-tab = "focus dfs-prev --boundaries-action wrap-around-the-workspace";
+
+        alt-shift-semicolon = "mode service";
+      };
+
+      mode.service.binding = {
+        esc = ["reload-config" "mode main"];
+        r = ["flatten-workspace-tree" "mode main"];
+        f = ["layout floating tiling" "mode main"];
+        backspace = ["close-all-windows-but-current" "mode main"];
+
+        alt-shift-h = ["join-with left" "mode main"];
+        alt-shift-j = ["join-with down" "mode main"];
+        alt-shift-k = ["join-with up" "mode main"];
+        alt-shift-l = ["join-with right" "mode main"];
+      };
+    };
+  };
+}

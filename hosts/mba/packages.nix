@@ -9,6 +9,7 @@
     ../../common/ripgrep.nix
     ../../common/television.nix
     ../../common/tmux.nix
+    ../../common/yazi.nix
   ];
 
   home.packages = with pkgs; [
@@ -35,6 +36,8 @@
     syntaxHighlighting.enable = true;
     initContent = ''
       bindkey -v
+      export EDITOR=nvim
+      export VISUAL=nvim
     '';
     shellAliases = {
       l = "eza -lha";
@@ -42,8 +45,8 @@
       ls = "eza";
       reb = "sudo darwin-rebuild switch --flake ~/nix-dotfiles#nix-darwin";
       rift = "~/Code/source/rift/target/release/rift";
+      rift-cli = "~/Code/source/rift/target/release/rift-cli";
       update = "sudo whoami; nix flake update --flake ~/nix-dotfiles && reb";
-      fastfetch = "fastfetch --logo 'NixOS'";
     };
   };
 }
