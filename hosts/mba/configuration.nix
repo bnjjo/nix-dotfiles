@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  imports = [./aerospace.nix];
+
   networking.hostName = "nix-darwin";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -14,13 +16,11 @@
     pkgs.sketchybar-app-font
   ];
 
-  imports = [./aerospace.nix];
-
   homebrew = {
     enable = true;
     # https://github.com/nix-darwin/nix-darwin/issues/1787
-    onActivation.cleanup = "zap"; # reenable once fixed
-    # onActivation.cleanup = "none";
+    # onActivation.cleanup = "zap"; # reenable once fixed
+    onActivation.cleanup = "none";
     taps = [
       "FelixKratz/formulae"
       "TheBoredTeam/boring-notch"
