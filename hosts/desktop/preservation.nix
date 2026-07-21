@@ -30,8 +30,6 @@
           ".config"
           ".local"
           ".ssh"
-          ".var"
-          ".ViberPC"
           "Code"
           "Downloads"
           "Pictures"

@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -10,6 +6,16 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # pin gpu min mhz to 950
+  systemd.services.set-gpu-min-freq = {
+    description = "Set Intel GPU min frequency";
+    wantedBy = ["multi-user.target"];
+    after = ["sysinit.target"];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/bin/sh -c 'echo 950 > /sys/class/drm/card1/gt_min_freq_mhz'";
+    };
+  };
   systemd.services."systemd-machine-id-commit".unitConfig.ConditionFirstBoot = true;
 
   networking.hostName = "nixos";
@@ -56,11 +62,8 @@
     vim
     wget
     curl
-    inputs.dwl.packages.x86_64-linux.default
-    inputs.slstatus.packages.x86_64-linux.default
   ];
 
-  services.flatpak.enable = true;
   services.getty.autologinUser = "benjamin";
   services.openssh.enable = true;
   services.pipewire = {
@@ -69,20 +72,22 @@
     pulse.enable = true;
     wireplumber.enable = true;
   };
+  # for noctalia
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
-  # neeeded for flatpak
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
-    ];
-    config = {
-      common = {
-        default = "wlr";
-      };
-    };
-  };
+  # hyprland
+  programs.hyprland.enable = true;
+
+  # needed for file dialogs, screen sharing
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [
+  #     # pkgs.xdg-desktop-portal-hyprland
+  #     pkgs.xdg-desktop-portal-gtk
+  #   ];
+  #   # config.hyprland.default = ["hyprland" "gtk"];
+  # };
 
   hardware.graphics = {
     enable = true;

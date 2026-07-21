@@ -17,6 +17,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     fenix = {
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,10 +29,6 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # my stuff
-    dwl.url = "github:bnjjo/dwl/main";
-    slstatus.url = "github:bnjjo/slstatus/master";
   };
 
   outputs = inputs @ {
@@ -48,6 +48,7 @@
         ./hosts/desktop/configuration.nix
         ./hosts/desktop/disko.nix
         ./hosts/desktop/preservation.nix
+        ./hosts/desktop/noctalia.nix
         disko.nixosModules.disko
         preservation.nixosModules.default
         home-manager.nixosModules.home-manager
