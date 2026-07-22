@@ -2,14 +2,14 @@
 auto-update = off
 
 # theme
-theme = Catppuccin Mocha
+theme = evergarden-fall-aqua.conf
 
 # transparency & blur
 background-opacity = 0.85
 background-blur = 40
 
 # font
-font-size = 18.0
+font-size = 17.5
 font-family = "Maple Mono Normal NL NF"
 font-feature = zero
 font-thicken = true

@@ -44,8 +44,6 @@
       ll = "eza -lha";
       ls = "eza";
       reb = "sudo darwin-rebuild switch --flake ~/nix-dotfiles#nix-darwin";
-      rift = "~/Code/source/rift/target/release/rift";
-      rift-cli = "~/Code/source/rift/target/release/rift-cli";
       update = "sudo whoami; nix flake update --flake ~/nix-dotfiles && reb";
     };
   };

@@ -4,7 +4,7 @@
     settings = {
       "$schema" = "https://starship.rs/config-schema.json";
       format = "[](red)$os$username[](bg:peach fg:red)$directory[](bg:yellow fg:peach)$git_branch$git_status[](fg:yellow bg:green)$c$rust$golang$nodejs$bun$php$java$kotlin$haskell$python[](fg:green bg:sapphire)$conda[](fg:sapphire bg:lavender)$time[ ](fg:lavender)$cmd_duration$line_break$character";
-      palette = "catppuccin_mocha";
+      palette = "evergarden_fall_aqua";
       os = {
         disabled = false;
         style = "bg:red fg:crust";
@@ -35,7 +35,7 @@
         show_always = true;
         style_user = "bg:red fg:crust";
         style_root = "bg:red fg:crust";
-        format = "[ $user]($style)";
+        format = "[ $user ]($style)";
       };
       directory = {
         style = "bg:peach fg:crust";
@@ -147,6 +147,35 @@
         min_time_to_notify = 45000;
       };
       palettes = {
+        evergarden_fall_aqua = {
+          # remapped to evergarden fall aqua
+          rosewater = "#f3c0e5"; # palette 5 (pink)
+          flamingo = "#f3c0e5"; # palette 5 (pink)
+          pink = "#f3c0e5"; # palette 5
+          mauve = "#f3c0e5"; # palette 5 (no purple in evergarden, closest is pink)
+          red = "#f57f82"; # palette 1
+          maroon = "#f57f82"; # palette 1
+          peach = "#f5d098"; # palette 3
+          yellow = "#f5d098"; # palette 3
+          green = "#cae0a7"; # palette 2
+          teal = "#addeb9"; # palette 6
+          sky = "#b2cfed"; # palette 4
+          sapphire = "#b2cfed"; # palette 4
+          blue = "#b2cfed"; # palette 4
+          lavender = "#f3c0e5"; # palette 5
+          text = "#f8f9e8"; # foreground
+          subtext1 = "#96b4aa"; # palette 7
+          subtext0 = "#adc9bc"; # palette 15
+          overlay2 = "#6f8788"; # palette 8
+          overlay1 = "#6f8788"; # palette 8
+          overlay0 = "#3d494d"; # palette 0
+          surface2 = "#3d494d"; # palette 0
+          surface1 = "#232a2e"; # background
+          surface0 = "#232a2e"; # background
+          base = "#232a2e"; # background
+          mantle = "#171c1f"; # cursor-text
+          crust = "#171c1f"; # cursor-text
+        };
         catppuccin_mocha = {
           rosewater = "#f5e0dc";
           flamingo = "#f2cdcd";

@@ -8,7 +8,7 @@
       exec-on-workspace-change = [
         "/bin/bash"
         "-c"
-        "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE"
+        "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
       ];
       start-at-login = false;
 
@@ -24,7 +24,7 @@
 
       automatically-unhide-macos-hidden-apps = true;
 
-      persistent-workspaces = ["1" "2" "3" "4" "5"];
+      persistent-workspaces = ["1" "2" "3" "4" "5" "6" "7" "8" "9"];
 
       key-mapping.preset = "dvorak";
 
@@ -78,6 +78,8 @@
         alt-tab = "focus dfs-next --boundaries-action wrap-around-the-workspace";
         alt-shift-tab = "focus dfs-prev --boundaries-action wrap-around-the-workspace";
 
+        # toggle floating mode on a window
+        alt-v = ["mode service" "layout floating tiling" "mode main"];
         alt-shift-semicolon = "mode service";
       };
 
