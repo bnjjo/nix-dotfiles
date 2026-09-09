@@ -15,8 +15,9 @@
     executable = true;
   };
 
-  # export PATH='$HOME/.local/bin:$PATH'
   home.sessionPath = [
     "$HOME/.local/bin"
+    "$HOME/.config/emacs/bin"
+    "/opt/homebrew/bin"
   ];
 }

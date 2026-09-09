@@ -2,6 +2,7 @@
   imports = [
     ./starship.nix
     ../../common/bat.nix
+    ../../common/direnv.nix
     ../../common/eza.nix
     ../../common/fd.nix
     ../../common/git.nix
@@ -17,6 +18,7 @@
     chafa
     cloc
     fastfetch
+    fontconfig
     lazygit
     mpv
     neovim
@@ -45,6 +47,7 @@
       ls = "eza";
       reb = "sudo darwin-rebuild switch --flake ~/nix-dotfiles#nix-darwin";
       update = "sudo whoami; nix flake update --flake ~/nix-dotfiles && reb";
+      fastfetch = "fastfetch --logo 'NixOS'";
     };
   };
 }

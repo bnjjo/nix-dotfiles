@@ -13,17 +13,26 @@
   fonts.packages = [
     pkgs.maple-mono.NormalNL-NF
     pkgs.nerd-fonts.jetbrains-mono
-    pkgs.sketchybar-app-font
+    pkgs.nerd-fonts.symbols-only
+    # pkgs.sketchybar-app-font
   ];
 
   homebrew = {
     enable = true;
-    # https://github.com/nix-darwin/nix-darwin/issues/1787
-    # onActivation.cleanup = "zap"; # reenable once fixed
-    onActivation.cleanup = "none";
+    onActivation.cleanup = "zap";
     taps = [
-      "FelixKratz/formulae"
-      "TheBoredTeam/boring-notch"
+      {
+        name = "FelixKratz/formulae";
+        trusted = true;
+      }
+      {
+        name = "TheBoredTeam/boring-notch";
+        trusted = true;
+      }
+      {
+        name = "d12frosted/emacs-plus";
+        trusted = true;
+      }
     ];
     brews = [
       {
@@ -33,22 +42,39 @@
     ];
     casks = [
       "boring-notch"
+      "crossover"
+      "emacs-plus-app"
       "ghostty"
       "karabiner-elements"
-      "iloader"
       "linearmouse"
       "nvidia-geforce-now"
       "raycast"
+      "steam"
       "viber"
       "zen"
     ];
     masApps = {
       "Infuse" = 1136220934;
+      "RetroArch" = 6499539433;
     };
   };
 
+  launchd.user.agents.emacs.serviceConfig = {
+    Label = "gnu.emacs.daemon";
+    KeepAlive = true;
+    ProgramArguments = [
+      "/bin/zsh"
+      "-ilc"
+      "emacs --fg-daemon"
+    ];
+    RunAtLoad = true;
+    ProcessType = "Interactive";
+    StandardErrorPath = "/tmp/emacs.err.log";
+    StandardOutPath = "/tmp/emacs.out.log";
+  };
+
   services.sketchybar = {
-    enable = true;
+    enable = false;
     package = pkgs.sketchybar;
   };
 

@@ -14,6 +14,15 @@
                             "to": [{ "key_code": "caps_lock" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": { "is_pointing_device": true },
+                    "simple_modifications": [
+                        {
+                            "from": { "pointing_button": "button4" },
+                            "to": [{ "pointing_button": "button3" }]
+                        }
+                    ]
                 }
             ],
             "name": "Default profile",

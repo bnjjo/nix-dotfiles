@@ -5,11 +5,11 @@
       config-version = 2;
 
       after-startup-command = [];
-      exec-on-workspace-change = [
-        "/bin/bash"
-        "-c"
-        "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
-      ];
+      # exec-on-workspace-change = [
+      #   "/bin/bash"
+      #   "-c"
+      #   "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
+      # ];
       start-at-login = false;
 
       enable-normalization-flatten-containers = true;

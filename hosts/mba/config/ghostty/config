@@ -2,7 +2,7 @@
 auto-update = off
 
 # theme
-theme = evergarden-fall-aqua.conf
+theme = TokyoNight Night
 
 # transparency & blur
 background-opacity = 0.85
