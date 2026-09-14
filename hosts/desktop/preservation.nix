@@ -9,7 +9,6 @@
         "/var/log"
         "/var/NetworkManager"
         "/var/lib/bluetooth"
-        "/var/lib/flatpak"
         {
           directory = "/var/lib/nixos";
           inInitrd = true;
@@ -30,10 +29,12 @@
           ".config"
           ".local"
           ".ssh"
+          ".ViberPC"
+          ".zsh_history"
           "Code"
           "Downloads"
           "Pictures"
-          "orgfiles"
+          "org"
           "nix-dotfiles"
         ];
 

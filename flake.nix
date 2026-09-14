@@ -7,7 +7,6 @@
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,10 +14,6 @@
     preservation.url = "github:nix-community/preservation";
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     fenix = {
@@ -34,7 +29,6 @@
   outputs = inputs @ {
     nixpkgs,
     nix-darwin,
-    nix-flatpak,
     disko,
     preservation,
     home-manager,
@@ -48,7 +42,6 @@
         ./hosts/desktop/configuration.nix
         ./hosts/desktop/disko.nix
         ./hosts/desktop/preservation.nix
-        ./hosts/desktop/noctalia.nix
         disko.nixosModules.disko
         preservation.nixosModules.default
         home-manager.nixosModules.home-manager
@@ -58,7 +51,6 @@
             useUserPackages = true;
             extraSpecialArgs = {inherit inputs fenix;};
             users.benjamin.imports = [
-              nix-flatpak.homeManagerModules.nix-flatpak
               ./hosts/desktop/home.nix
             ];
             backupFileExtension = "backup";

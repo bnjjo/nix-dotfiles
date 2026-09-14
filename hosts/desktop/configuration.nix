@@ -3,6 +3,8 @@
     ./hardware-configuration.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -14,6 +16,16 @@
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "/bin/sh -c 'echo 950 > /sys/class/drm/card1/gt_min_freq_mhz'";
+    };
+  };
+  # set initial brightness
+  systemd.services.set-init-brightness = {
+    description = "Set initial brightness";
+    wantedBy = ["multi-user.target"];
+    after = ["multi-user.target"];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.brightnessctl}/bin/brightnessctl set 35%";
     };
   };
   systemd.services."systemd-machine-id-commit".unitConfig.ConditionFirstBoot = true;
@@ -59,11 +71,20 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
+    curl
     vim
     wget
-    curl
   ];
 
+  xdg.portal.config.common.default = "*";
+
+  services.xserver = {
+    enable = true;
+    windowManager.i3.enable = true;
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 30;
+  };
+  services.displayManager.defaultSession = "none+i3";
   services.getty.autologinUser = "benjamin";
   services.openssh.enable = true;
   services.pipewire = {
@@ -72,22 +93,6 @@
     pulse.enable = true;
     wireplumber.enable = true;
   };
-  # for noctalia
-  services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
-
-  # hyprland
-  programs.hyprland.enable = true;
-
-  # needed for file dialogs, screen sharing
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = [
-  #     # pkgs.xdg-desktop-portal-hyprland
-  #     pkgs.xdg-desktop-portal-gtk
-  #   ];
-  #   # config.hyprland.default = ["hyprland" "gtk"];
-  # };
 
   hardware.graphics = {
     enable = true;
