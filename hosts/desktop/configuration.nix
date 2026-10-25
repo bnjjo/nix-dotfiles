@@ -25,7 +25,7 @@
     after = ["multi-user.target"];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.brightnessctl}/bin/brightnessctl set 35%";
+      ExecStart = "${pkgs.brightnessctl}/bin/brightnessctl set 25%";
     };
   };
   systemd.services."systemd-machine-id-commit".unitConfig.ConditionFirstBoot = true;
@@ -76,14 +76,6 @@
     wget
   ];
 
-  xdg.portal.config.common.default = "*";
-
-  services.xserver = {
-    enable = true;
-    windowManager.i3.enable = true;
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 30;
-  };
   services.displayManager.defaultSession = "none+i3";
   services.getty.autologinUser = "benjamin";
   services.openssh.enable = true;
@@ -92,6 +84,14 @@
     alsa.enable = true;
     pulse.enable = true;
     wireplumber.enable = true;
+  };
+  services.xserver = {
+    enable = true;
+    windowManager.i3.enable = true;
+    updateDbusEnvironment = true;
+
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 30;
   };
 
   hardware.graphics = {
@@ -104,6 +104,12 @@
 
   # enable hardware virtualization
   virtualisation.libvirtd.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = ["gtk"];
+  };
 
   zramSwap.enable = true;
 

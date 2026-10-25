@@ -23,6 +23,7 @@
     mpv
     neovim
     nix-search-tv
+    pulseaudio
     tree-sitter
   ];
 

@@ -33,6 +33,7 @@
     preservation,
     home-manager,
     fenix,
+    zen-browser,
     ...
   }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {

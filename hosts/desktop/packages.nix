@@ -4,8 +4,10 @@
   ...
 }: {
   imports = [
+    ./apps/alacritty.nix
     ./apps/i3.nix
     ./apps/picom.nix
+    ./apps/rofi.nix
     ./apps/starship.nix
     ../../common/bat.nix
     ../../common/eza.nix
@@ -20,7 +22,6 @@
   ];
 
   home.packages = with pkgs; [
-    alacritty
     brightnessctl
     chafa
     fastfetch
@@ -30,8 +31,8 @@
     mpv
     neovim
     nix-search-tv
+    papirus-icon-theme
     playerctl
-    rofi
     unzip
     tree-sitter
     xclip
