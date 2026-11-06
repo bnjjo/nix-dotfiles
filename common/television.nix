@@ -1,7 +1,7 @@
 {...}: {
   programs.television = {
     enable = true;
-    enableZshIntegration = true;
+    enableNushellIntegration = true;
     settings = {};
     channels = {
       nix = {
@@ -54,6 +54,34 @@
         actions.edit = {
           description = "Edit the selected org file";
           command = "nvim '{}' -c 'cd ~/orgfiles'";
+          mode = "execute";
+        };
+      };
+      projects = {
+        metadata = {
+          name = "projects";
+          description = "Select from git repositories on your local machine";
+          requirements = ["fd" "git"];
+        };
+        source = {
+          command = "fd -g .git -HL -t d -d 10 --prune ~ -E 'Library' -E 'Application Support' --exec dirname '{}'";
+          display = "{split:/:-1}";
+        };
+        preview.command = "cd '{}'; git log -n 200 --pretty=medium --all --graph --color";
+        keybindings = {
+          shift-enter = "actions:cd";
+          ctrl-e = "actions:edit";
+        };
+        actions.cd = {
+          description = "Open a new shell in the selected repository";
+          command = "cd {} && $SHELL";
+          shell = "bash";
+          mode = "execute";
+        };
+        actions.edit = {
+          description = "Open the repository in editor";
+          command = "\${EDITOR:-vim} {}";
+          shell = "bash";
           mode = "execute";
         };
       };

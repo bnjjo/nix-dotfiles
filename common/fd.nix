@@ -2,11 +2,14 @@
   programs.fd = {
     enable = true;
     ignores = [
+      ".cache/"
+      ".direnv/"
+      ".DS_Store"
+      ".Trash/"
       "Applications/"
       "Library/"
-      ".Trash/"
-      ".cache/"
-      ".DS_Store"
+      "nix/"
+      "result/"
     ];
   };
 }

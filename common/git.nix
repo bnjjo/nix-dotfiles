@@ -7,5 +7,6 @@
       init.defaultBranch = "main";
       core.editor = "nvim";
     };
+    ignores = [".DS_Store"];
   };
 }

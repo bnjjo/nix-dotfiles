@@ -5,10 +5,15 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  users.knownUsers = ["benjamin"];
   users.users.benjamin = {
     home = "/Users/benjamin";
     name = "benjamin";
+    uid = 501;
+    shell = pkgs.nushell;
   };
+
+  environment.shells = [pkgs.nushell];
 
   fonts.packages = [
     pkgs.maple-mono.NormalNL-NF
@@ -41,21 +46,23 @@
       }
     ];
     casks = [
-      "boring-notch"
       "crossover"
       "emacs-plus-app"
       "ghostty"
       "karabiner-elements"
       "linearmouse"
       "nvidia-geforce-now"
+      "prismlauncher"
       "raycast"
       "steam"
       "viber"
       "zen"
     ];
     masApps = {
-      "Infuse" = 1136220934;
-      "RetroArch" = 6499539433;
+      "Balatro+" = 6502451661;
+      "Bloons TD 6+" = 1584423325;
+      # "Infuse" = 1136220934;
+      # "RetroArch" = 6499539433;
     };
   };
 
@@ -74,7 +81,7 @@
   };
 
   services.sketchybar = {
-    enable = false;
+    enable = true;
     package = pkgs.sketchybar;
   };
 
