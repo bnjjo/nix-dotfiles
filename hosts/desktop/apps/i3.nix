@@ -52,7 +52,7 @@
     bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 
     # exit
-    bindsym ${mod}+Shift+e exec i3-msg exit
+    bindsym ${mod}+Shift+q exec i3-msg exit
   '';
 in {
   xsession.windowManager.i3 = {
@@ -64,7 +64,6 @@ in {
         names = ["JetBrains Mono Nerd Font Mono"];
         size = 12.0;
       };
-      # no structured keybindings — everything lives in extraConfig now
       keybindings = lib.mkForce {};
       startup = [
         {
@@ -74,6 +73,23 @@ in {
         }
         {
           command = "alacritty --daemon";
+          notification = false;
+        }
+
+        # used for custom screen off behavior
+        {
+          command = "${pkgs.xset}/bin/xset s off";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "${pkgs.xset}/bin/xset dpms 0 0 0";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "${pkgs.xidlehook}/bin/xidlehook --not-when-fullscreen --not-when-audio --timer 300 '${pkgs.xset}/bin/xset dpms force off' \"\"";
+          always = false;
           notification = false;
         }
       ];

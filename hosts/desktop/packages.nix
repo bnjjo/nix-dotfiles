@@ -10,7 +10,6 @@
     ./apps/rofi.nix
     ./apps/starship.nix
     ../../common/bat.nix
-    ../../common/eza.nix
     ../../common/direnv.nix
     ../../common/fd.nix
     ../../common/git.nix
@@ -73,7 +72,7 @@
       l = "eza -lha --icons --git";
       ll = "l";
       reb = "sudo nixos-rebuild switch --flake ~/nix-dotfiles";
-      update = "sudo whoami; nix flake update --flake ~/nix-dotfiles && reb";
+      nix-update = "sudo whoami; nix flake update --flake ~/nix-dotfiles && reb";
     };
     initExtra = ''
       set -o vi
@@ -90,7 +89,7 @@
       ll = "l";
       ls = "eza";
       reb = "sudo nixos-rebuild switch --flake ~/nix-dotfiles#nixos";
-      update = "sudo whoami; nix flake update --flake ~/nix-dotfiles && reb";
+      nix-update = "sudo whoami; nix flake update --flake ~/nix-dotfiles && reb";
     };
     initContent = ''
       bindkey -v

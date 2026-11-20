@@ -4,7 +4,7 @@
 
     theme = "iggy";
 
-    extraConfig = {
+    settings = {
       terminal = "alacritty";
 
       show-icons = true;

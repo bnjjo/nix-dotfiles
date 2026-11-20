@@ -11,7 +11,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    preservation.url = "github:nix-community/preservation";
+    preservation.url = "github:nix-community/preservation/refs/pull/36/head";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
